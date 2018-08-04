@@ -3,34 +3,41 @@
 <head>
     <meta charset="utf-8" />
     <title>Dutch Treat: @ViewBag.Title</title>
-    <link href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/node_modules/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body>
-    <header class="">
-        <h1>Welcome to Dutch Treat</h1>
-        <menu>
-            <ul>
-                <li><a asp-controller="App" asp-action="Index">Home</a></li>
-                <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
-                <li><a asp-controller="App" asp-action="About">About</a></li>
+    <div class="navbar navbar-inverse">
+        <header class="container">
+            <div class="nav navbar-header">
+                <div class="navbar-brand">Welcome to Dutch Treat</div>
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#menu">&#9776;</button>
+            </div>
+            <div id="menu" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="App" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
+                    <li><a asp-controller="App" asp-action="About">About</a></li>
 
-                @*
-                    <li><a href="/">Home</a></li>               --wersja bez RAZORA, stara szkoła
-                    <li><a href="/app/contact">Contact</a></li> --wersja bez RAZORA, stara szkoła
-                    <li><a href="/app/about">About</a></li>     --wersja bez RAZORA, stara szkoła
-                *@
-            </ul>
-        </menu>
-    </header>
-    <section>
-        <h1>@ViewBag.Title</h1>
+                    @*
+                        <li><a href="/">Home</a></li>               --wersja bez RAZORA, stara szkoła
+                        <li><a href="/app/contact">Contact</a></li> --wersja bez RAZORA, stara szkoła
+                        <li><a href="/app/about">About</a></li>     --wersja bez RAZORA, stara szkoła
+                    *@
+                </ul>
+            </div>
+        </header>
+    </div>
+    <section class="container">
+        <h1 class="text-center">@ViewBag.Title</h1>
         @RenderBody()
     </section>
-    <footer>Copyright 2017 Dutch Treat LLC</footer>
+    <footer class="container">
+        <div class="text-center">Copyright 2017 Dutch Treat LLC</div>
+    </footer>
 
     <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="~/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/node_modules/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="~/js/index.js"></script>
     @RenderSection("scripts", false)
 </body>
