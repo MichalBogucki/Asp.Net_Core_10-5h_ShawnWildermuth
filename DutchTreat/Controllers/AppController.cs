@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using DutchTreat.Data;
 using DutchTreat.Services;
 using DutchTreat.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DutchTreat.Controllers
@@ -20,7 +21,7 @@ namespace DutchTreat.Controllers
             _repository = repository;
         }
         public IActionResult Index()
-        { 
+        {
             return View();
         }
 
@@ -61,12 +62,13 @@ namespace DutchTreat.Controllers
 
         public IActionResult Shop()
         {
-            //var results = _repository.Products
-            //    .OrderBy(p => p.Category)
-            //    .ToList();
-            var results = _repository.GetAllProducts();
+            return View();
+            //var results = _repository.Products  <--stare ale zostawiłem
+            //    .OrderBy(p => p.Category)       <--stare ale zostawiłem
+            //    .ToList();                      <--stare ale zostawiłem
 
-            return View(results);
+            //var results = _repository.GetAllProducts();   <--- do wykladu 1-10
+            //return View(results);                         <--- do wykladu 1-10
         }
     }
 }

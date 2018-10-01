@@ -2,9 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Account\Login.cshtml" />
     <Content Remove="wwwroot\content\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
     <Content Remove="wwwroot\content\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
     <Content Remove="wwwroot\content\bootstrap-3.3.7-dist\css\bootstrap.css.map" />
@@ -47,6 +49,19 @@
     <Content Remove="wwwroot\content\font-awesome\scss\_screen-reader.scss" />
     <Content Remove="wwwroot\content\font-awesome\scss\_stacked.scss" />
     <Content Remove="wwwroot\content\font-awesome\scss\_variables.scss" />
+    <Content Remove="wwwroot\ts\main.ts" />
+    <Content Remove="wwwroot\ts\storecustomer.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\app\login\login.component.ts" />
+    <None Remove="ClientApp\app\shared\dataService.ts" />
+    <None Remove="ClientApp\app\shared\order.ts" />
+    <None Remove="ClientApp\app\shared\product.ts" />
+    <None Remove="ClientApp\app\shop\cart.component.html" />
+    <None Remove="ClientApp\app\shop\cart.component.ts" />
+    <None Remove="ClientApp\app\shop\productList.component.ts" />
+    <None Remove="ClientApp\app\shop\shop.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -77,6 +92,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Views\Account\Login.cshtml" />
     <None Include="Views\App\Index.cshtml" />
     <None Include="wwwroot\content\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
     <None Include="wwwroot\content\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
@@ -353,11 +369,30 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.9" />
   </ItemGroup>
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\login\login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\dataService.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\order.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shared\product.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shop\cart.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shop\cart.component.html" />
+    <TypeScriptCompile Include="ClientApp\app\shop\productList.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\shop\shop.component.ts" />
+    <TypeScriptCompile Include="wwwroot\ts\main.ts" />
+    <TypeScriptCompile Include="wwwroot\ts\storecustomer.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\app\checkout\" />
   </ItemGroup>
 
 </Project>

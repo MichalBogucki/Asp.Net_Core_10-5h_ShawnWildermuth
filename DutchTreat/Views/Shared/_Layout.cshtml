@@ -20,6 +20,14 @@
                     <li><a asp-controller="App" asp-action="Shop">Shop</a></li>
                     <li><a asp-controller="App" asp-action="Contact">Contact</a></li>
                     <li><a asp-controller="App" asp-action="About">About</a></li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li><a asp-controller="Account" asp-action="Logout">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                    }
 
                     @*
         <li><a href="/">Home</a></li>               --wersja bez RAZORA, stara szkoła
